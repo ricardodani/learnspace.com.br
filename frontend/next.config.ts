@@ -8,12 +8,12 @@ const backendUrl = isProduction ? apiUrl : 'http://localhost:8000';
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    return [
+    return backendUrl ? [
       {
         source: '/api/:path*',
         destination: `${backendUrl}/:path*`, // Dynamic destination
       },
-    ];
+    ] : [];
   },
   /* other config options here */
 };
