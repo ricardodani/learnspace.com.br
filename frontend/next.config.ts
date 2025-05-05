@@ -4,7 +4,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 // Default to local backend in development
-const backendUrl = isProduction ? apiUrl : 'http://localhost:8000';
+const backendUrl = isProduction ? apiUrl : 'http://localhost:8000/v1';
 
 const nextConfig: NextConfig = {
   async rewrites() {
